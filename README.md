@@ -1,9 +1,9 @@
 **Technical Skills:** Python, R, SQL  
 **Relevant Coursework:** Regression Modeling, Decision Trees, Clustering, Machine Learning, Time Series Forecasting
 
-## Contact Info  
-**Email** smunugo2@ncsu.edu  
-**LinkedIn** [https://www.linkedin.com/in/satya-munugoti/](https://www.linkedin.com/in/satya-munugoti/)
+## Reach me 
+**Email:** smunugo2@ncsu.edu  
+**LinkedIn:** [https://www.linkedin.com/in/satya-munugoti/](https://www.linkedin.com/in/satya-munugoti/)
 
 ## Education  
 North Carolina State University, Raleigh, NC  
@@ -16,7 +16,7 @@ North Carolina State University, Raleigh, NC
 • Created Tableau dashboard with sentiment scores to help restaurant owners identify ideal markets for new locations  
 [View case study](https://docs.google.com/presentation/d/1rh43a-PXiLCaoP4A_SVqx3LXD3wpGoNoKUsV298h7fg/edit?usp=sharing)  
 [View Tableau map](https://public.tableau.com/app/profile/satya.munugoti/viz/YelpTipsSentimentanalysisofcuisinesacrossU_S_metroareas/Dashboard1) 
-![Yelp Tips Sentiment Analysis Dashboard Preview](https://raw.githubusercontent.com/satya-munu/satyamunugoti.github.io/main/Yelp%20Tips%20Sentiment%20Tableau%20Map%Preview.png)
+![Yelp Tips Sentiment Analysis Dashboard Preview](Yelp Tips Sentiment Tableau Map Preview.png)
 
 ### Tableau Dashboard for NCSU Women's Tennis Team  
 • Tableau dashboard with 19 key performance indicators, cumulative player profiles with season and career averages, and comparison against recruiting competition across US  
