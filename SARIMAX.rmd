@@ -1,0 +1,174 @@
+---
+title: "5th Model - ARIMA w/ External Regressor"
+author: "Satya Munugoti"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+library(fpp3)
+library(forecast)
+library(imputeTS)
+library(fable.prophet)
+```
+
+```{r}
+energy <- read.csv("hrl_load_metered.csv")
+test1 <- read.csv("test1.csv")
+test2 <- read.csv("test2.csv")
+test3 <- read.csv("test3.csv")
+test4 <- read.csv("test4.csv")
+```
+
+```{r}
+training <-rbind(energy, test1, test2, test3, test4)
+```
+
+```{r}
+# creating date object
+validation5 <- read.csv("test5.csv")
+validation5$datetime_beginning_ept <- as.POSIXct(validation5$datetime_beginning_ept,
+                                                 format = "%m/%d/%Y %I:%M:%S %p",
+                                                 tz = "America/New_York")
+validation5_ts <- as_tsibble(validation5, index = datetime_beginning_ept)
+validation5_ts <- validation5_ts %>% select(-c(datetime_beginning_utc))
+
+```
+
+```{r}
+training$datetime_beginning_ept <-
+as.POSIXct(training$datetime_beginning_ept,
+format = "%m/%d/%y %H:%M",
+tz = "America/New_York")
+
+training <- training %>% filter(datetime_beginning_ept > "2024-09-01 00:00:00")
+```
+
+```{r}
+# Accounting for daylight savings time
+training <- training %>%
+  add_count(datetime_beginning_ept, name = "count") %>%
+  mutate(Adjusted = ifelse(count > 1, 1, 0))
+
+ training <- training %>% group_by(datetime_beginning_ept) %>% 
+   summarize(mw_new = mean(mw), na.rm = TRUE, Adjusted = first(Adjusted)) 
+
+duplicates(training)
+
+energy_ts <- training %>%
+  as_tsibble(index = datetime_beginning_ept)
+
+has_gaps(energy_ts)
+count_gaps(energy_ts)
+scan_gaps(energy_ts)
+```
+
+```{r}
+# Impute missing times
+energy_impute <- energy_ts %>% fill_gaps() %>%
+  mutate(mw = na_interpolation(mw_new, option = "linear"))
+
+energy_impute <- as_tsibble(energy_impute, index = datetime_beginning_ept)
+```
+
+```{r}
+# Confirming which observations were imputed
+imputed <- anti_join(energy_impute, energy_ts, by = "datetime_beginning_ept") 
+# Add "Adjusted" flag to imputed observations
+energy_impute <- energy_impute %>%
+ mutate(Adjusted = if_else(datetime_beginning_ept %in% imputed$datetime_beginning_ept, 1, 0)) 
+```
+
+```{r}
+has_gaps(energy_impute)
+```
+
+```{r}
+# Adding step intervention to account for hurricane 
+energy_impute$hurricane <- ifelse( energy_impute$datetime_beginning_ept >= as.POSIXct("2024-09-26 00:00:00", tz = "America/New_York") & energy_impute$datetime_beginning_ept < as.POSIXct("2024-09-28 00:00:00", tz = "America/New_York"),1, 0)
+```
+
+ARIMA w/ External Regressors (Hurricane point intervention and Avg energy usage by hour)
+```{r}
+library(fable.prophet)
+library(modelr)
+
+energy_impute <- energy_impute %>%
+  mutate(
+    hour_of_day = hour(datetime_beginning_ept), 
+    day_of_week = wday(datetime_beginning_ept, label = TRUE),  
+    avg_energy_usage = ave(mw, day_of_week, hour_of_day, FUN = mean),
+  )
+
+model_all <- energy_impute %>%
+  model(
+    arimax = ARIMA(mw ~ pdq(2, 0, 1) + PDQ(2, 0, 1) + fourier(K = 2, period = 24) + hurricane + 1 + avg_energy_usage)) 
+```
+
+
+Validation 5
+SARIMAX - MAPE 4.62%
+
+```{r}
+validation5_ts$hurricane <- rep(0, 168)
+validation5_ts <- validation5_ts %>%
+  mutate(
+    hour_of_day = hour(datetime_beginning_ept), 
+    day_of_week = wday(datetime_beginning_ept, label = TRUE),  
+   avg_energy_usage = ave(mw, day_of_week, hour_of_day, FUN = mean)
+  )
+
+model_all_for4 <- model_all %>% select("arimax") %>% forecast(validation5_ts)
+
+model_all_for4 %>%
+accuracy(validation5_ts) %>%
+arrange(MAPE)
+```
+
+```{r}
+# defining avg energy usage variable for forecast
+start_time <- as.POSIXct("2024-10-24 00:00:00", tz = "America/New_York")
+max_date <- max(energy_impute$datetime_beginning_ept)
+avg_energy_at_max_date <- energy_impute$avg_energy_usage[energy_impute$datetime_beginning_ept == max_date]
+
+max_index <- which(energy_impute$datetime_beginning_ept == max_date)
+print(max_date)
+print(avg_energy_at_max_date)
+print(max_index)
+
+selected_avg_energy_usage <- energy_impute$avg_energy_usage[energy_impute$datetime_beginning_ept >= as.POSIXct("2024-10-10 00:00:00", tz = "America/New_York") & energy_impute$datetime_beginning_ept <= as.POSIXct("2024-10-17 23:00:00", tz = "America/New_York")]
+```
+
+
+```{r}
+# forecasting 1 week of energy usagge 
+new_data <- tsibble(
+  time = seq(start_time, by = "1 hour", length.out = 192),
+  hurricane = rep(0, 192),
+  avg_energy_usage = selected_avg_energy_usage,
+  index = time
+)
+
+model_all_for4 <- model_all %>% select("arimax") %>% forecast(h = 192, new_data = new_data)
+
+forecast_df <- as.data.frame(model_all_for4)
+
+model_all_for4 <- forecast_df %>% select(c(time, .mean)) %>% tail(168)
+```
+
+```{r}
+library(readr)
+write.csv(model_all_for4, "UPDATED_forecast_values.csv", row.names = FALSE)
+```
+
+```{r}
+# forecast vs validation plot
+ggplot() +
+  geom_line(aes(x = datetime_beginning_ept, y = mw,  color = "Test"), data = validation5_ts) + 
+  geom_line(aes(x = datetime_beginning_ept, y = .mean, color = "Forecast"), data = model_all_for4) +  
+  labs(x = "Month, Day", y = "Total MW", color = "Legend" ) + 
+  scale_color_manual(values = c("Test" = "black", "Forecast" = "#D55E00")) + 
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) 
+```
