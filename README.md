@@ -1,7 +1,7 @@
 **Technical Skills:** Python, R, SQL  
 **Relevant Coursework:** Regression Modeling, Decision Trees, Clustering, Machine Learning, Time Series Forecasting
 
-## Reach me 
+## Contact me 
 **Email:** smunugo2@ncsu.edu  
 **LinkedIn:** [https://www.linkedin.com/in/satya-munugoti/](https://www.linkedin.com/in/satya-munugoti/)
 
