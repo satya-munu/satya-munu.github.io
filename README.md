@@ -15,9 +15,12 @@ North Carolina State University, Raleigh, NC
 <details>
   <summary>Quick Summary</summary>
   
-  - Cleaned and analyzed over 260,000 Yelp tips using natural language processing in Python  
-  - Created Tableau dashboard with sentiment scores to help restaurant owners identify ideal markets for new locations  
-  - Packages used: NLTK (VADER) for sentiment analysis, Scikit-learn (LDA) for topic modeling, and geopandas for mapping metropolitan areas  
+  - Cleaned and analyzed over 260,000 Yelp tips using natural language processing in Python
+    
+  - Created Tableau dashboard with sentiment scores to help restaurant owners identify ideal markets for new locations
+    
+  - Packages used: NLTK (VADER) for sentiment analysis, Scikit-learn (LDA) for topic modeling, and geopandas for mapping metropolitan areas
+    
 </details>
 
 [View case study](https://docs.google.com/presentation/d/1rh43a-PXiLCaoP4A_SVqx3LXD3wpGoNoKUsV298h7fg/edit?usp=sharing)  
@@ -30,8 +33,10 @@ North Carolina State University, Raleigh, NC
 <details>
   <summary>Quick Summary</summary>
   
-  - Tableau dashboard with 19 key performance indicators, cumulative player profiles with season and career averages, and comparison against recruiting competition across US  
+  - Tableau dashboard with 19 key performance indicators, cumulative player profiles with season and career averages, and comparison against recruiting competition across US
+    
   - Presented to head coach of NCSU  Women’s Tennis team, now used for player recruitment and training
+    
 </details>
 
 [View Tableau Dashboard](https://public.tableau.com/views/NCStateWomensTennisOrange8/WinsVsLosses?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link) 
@@ -43,7 +48,9 @@ North Carolina State University, Raleigh, NC
   <summary>Quick Summary</summary>
   
   - Predicted a week's energy usage with a mean average percentage error of 2.17% on the test set, helping the utility company to prepare for operational expenses
+    
   - Created a seasonal ARMA(2, 0, 2) model with an external regressor
+    
 </details>
 
 [View report](https://docs.google.com/presentation/d/1s8oHCqFasSjtw6T9VbCdNO51NDHRzz2504PJ2JNn2YU/edit?usp=sharing)
