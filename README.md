@@ -14,11 +14,9 @@ North Carolina State University, Raleigh, NC
 ### Sentiment analysis of Yelp tips for cuisines across U.S. metro areas  
 <details>
   <summary>Quick Summary</summary>
-  
-  - Cleaned and analyzed over 260,000 Yelp tips using natural language processing in Python
- 
-  - Created Tableau dashboard with sentiment scores to help restaurant owners identify ideal markets for new locations
 
+  - Cleaned and analyzed over 260,000 Yelp tips using natural language processing in Python
+  - Created Tableau dashboard with sentiment scores to help restaurant owners identify ideal markets for new locations
   - Packages used: NLTK (VADER) for sentiment analysis, Scikit-learn (LDA) for topic modeling, and geopandas for mapping metropolitan areas
 
 </details>
@@ -32,9 +30,8 @@ North Carolina State University, Raleigh, NC
 ### Tableau Dashboard for NCSU Women's Tennis Team  
 <details>
   <summary>Quick Summary</summary>
-  
-  - Tableau dashboard with 19 key performance indicators, cumulative player profiles with season and career averages, and comparison against recruiting competition across US
 
+  - Tableau dashboard with 19 key performance indicators, cumulative player profiles with season and career averages, and comparison against recruiting competition across US
   - Presented to head coach of NCSU  Women’s Tennis team, now used for player recruitment and training
 
 </details>
@@ -46,7 +43,7 @@ North Carolina State University, Raleigh, NC
 ### Forecasting Hourly Energy Usage for Appalachian region
 <details>
   <summary>Quick Summary</summary>
-  
+
   - Predicted a week's energy usage with a mean average percentage error of 2.17% on the test set, helping the utility company to prepare for operational expenses
 
   - Created a seasonal ARMA(2, 0, 2) model with an external regressor
