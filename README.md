@@ -27,19 +27,6 @@ North Carolina State University, Raleigh, NC
 
 ![Yelp Tips Sentiment Tableau Map Preview.png](https://raw.githubusercontent.com/satya-munu/satyamunugoti.github.io/refs/heads/main/Yelp%20Tips%20Sentiment%20Tableau%20Map%20Preview.png)
 
-### Tableau Dashboard for NCSU Women's Tennis Team  
-<details>
-  <summary>Quick Summary</summary>
-
-  - Tableau dashboard with 19 key performance indicators, cumulative player profiles with season and career averages, and comparison against recruiting competition across US
-  - Presented to head coach of NCSU  Women’s Tennis team, now used for player recruitment and training
-
-</details>
-
-[View Tableau Dashboard](https://public.tableau.com/views/NCStateWomensTennisOrange8/WinsVsLosses?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link) 
-
-![Tableau Tennis Dashboard](https://raw.githubusercontent.com/satya-munu/satyamunugoti.github.io/refs/heads/main/NC%20State%20Women's%20Tennis%20Dashboard%20Preview%202.png)
-
 ### Forecasting Hourly Energy Usage for Appalachian region
 <details>
   <summary>Quick Summary</summary>
@@ -53,4 +40,18 @@ North Carolina State University, Raleigh, NC
 [View report](https://docs.google.com/presentation/d/1s8oHCqFasSjtw6T9VbCdNO51NDHRzz2504PJ2JNn2YU/edit?usp=sharing)
 
 ![Time Series Forecast.png](https://raw.githubusercontent.com/satya-munu/satya-munu.github.io/refs/heads/main/Time%20Series%20Energy%20Forecast.png)
+
+### Tableau Dashboard for NCSU Women's Tennis Team  
+<details>
+  <summary>Quick Summary</summary>
+
+  - Tableau dashboard with 19 key performance indicators, cumulative player profiles with season and career averages, and comparison against recruiting competition across US
+  - Presented to head coach of NCSU  Women’s Tennis team, now used for player recruitment and training
+
+</details>
+
+[View Tableau Dashboard](https://public.tableau.com/views/NCStateWomensTennisOrange8/WinsVsLosses?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link) 
+
+![Tableau Tennis Dashboard](https://raw.githubusercontent.com/satya-munu/satya-munu.github.io/refs/heads/main/Tableau%20Dashboard%20Tennis%20Dashboard.png)
+
 
