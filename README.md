@@ -3,7 +3,7 @@
 
 ## Contact me 
 **Email:** smunugo2@ncsu.edu  
-**Linkedin:** [https://www.linkedin.com/in/satya-munugoti/](https://www.linkedin.com/in/satya-munugoti/)
+[**Linkedin**](https://www.linkedin.com/in/satya-munugoti/)
 
 ## Education  
 North Carolina State University, Raleigh, NC  
@@ -16,7 +16,9 @@ North Carolina State University, Raleigh, NC
   <summary>Quick Summary</summary>
 
   - Cleaned and analyzed over 260,000 Yelp tips using natural language processing in Python
+    
   - Created Tableau dashboard with sentiment scores to help restaurant owners identify ideal markets for new locations
+    
   - Packages used: NLTK (VADER) for sentiment analysis, Scikit-learn (LDA) for topic modeling, and geopandas for mapping metropolitan areas
 
 </details>
@@ -46,6 +48,7 @@ North Carolina State University, Raleigh, NC
   <summary>Quick Summary</summary>
 
   - Tableau dashboard with 19 key performance indicators, cumulative player profiles with season and career averages, and comparison against recruiting competition across US
+    
   - Presented to head coach of NCSU  Women’s Tennis team, now used for player recruitment and training
 
 </details>
