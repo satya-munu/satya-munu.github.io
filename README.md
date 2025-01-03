@@ -15,11 +15,11 @@ North Carolina State University, Raleigh, NC
 <details>
   <summary>Quick Summary</summary>
 
-  - Cleaned and analyzed over 260,000 Yelp tips using natural language processing in Python
-    
-  - Created Tableau dashboard with sentiment scores to help restaurant owners identify ideal markets for new locations
-    
-  - Packages used: NLTK (VADER) for sentiment analysis, Scikit-learn (LDA) for topic modeling, and geopandas for mapping metropolitan areas
+  <ul>
+    <li>Cleaned and analyzed over 260,000 Yelp tips using natural language processing in Python</li>
+    <li>Created Tableau dashboard with sentiment scores to help restaurant owners identify ideal markets for new locations</li>
+    <li>Packages used: NLTK (VADER) for sentiment analysis, Scikit-learn (LDA) for topic modeling, and geopandas for mapping metropolitan areas</li>
+  </ul>
 
 </details>
 
@@ -29,13 +29,28 @@ North Carolina State University, Raleigh, NC
 
 ![Yelp Tips Sentiment Tableau Map Preview.png](https://raw.githubusercontent.com/satya-munu/satyamunugoti.github.io/refs/heads/main/Yelp%20Tips%20Sentiment%20Tableau%20Map%20Preview.png)
 
-### Forecasting Hourly Energy Usage for Appalachian region
+## Predicting Customer Outcomes from Bank Direct Marketing Campaign
 <details>
   <summary>Quick Summary</summary>
 
-  - Predicted a week's energy usage with a mean average percentage error of 2.17% on the test set, helping the utility company to prepare for operational expenses
+  <ul>
+    <li> Developed a predictive model that targets 80% of potential customers by leveraging the top 46.4% of predictions
+    <li> Predicted if bank customer will subscribe to a term deposit with 80% accuracy using CatBoost model
+    <li> Identified key attributes of customers likely to subscribe and provided targeted marketing recommendations
+  <ul>
 
-  - Created a seasonal ARMA(2, 0, 2) model with an external regressor
+  </details>
+
+  [View insights]()
+
+### Forecasting Hourly Energy Usage for the Appalachian region
+<details>
+  <summary>Quick Summary</summary>
+  
+  <ul>
+      <li>Predicted a week's energy usage with a mean average percentage error of 2.17% on the test set, helping the utility company to prepare for operational expenses</li>
+      <li>Created a seasonal ARMA(2, 0, 2) model with an external regressor</li>
+  </ul>
 
 </details>
 
@@ -46,10 +61,11 @@ North Carolina State University, Raleigh, NC
 ### Tableau Dashboard for NCSU Women's Tennis Team  
 <details>
   <summary>Quick Summary</summary>
-
-  - Tableau dashboard with 19 key performance indicators, cumulative player profiles with season and career averages, and comparison against recruiting competition across US
-    
-  - Presented to head coach of NCSU  Women’s Tennis team, now used for player recruitment and training
+  
+    <ul>
+      <li>Developed a Tableau dashboard with 19 key performance indicators, cumulative player profiles with season and career averages, and comparisons against recruiting competition across the US</li>
+      <li>Presented to the head coach of NCSU Women’s Tennis team, now used for player recruitment and training</li>
+    </ul>
 
 </details>
 
