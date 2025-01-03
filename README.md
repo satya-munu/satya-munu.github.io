@@ -42,6 +42,8 @@ North Carolina State University, Raleigh, NC
   </details>
 
   [View insights]()
+  
+  ![Marketing Lift.png](https://raw.githubusercontent.com/satya-munu/satya-munu.github.io/refs/heads/main/Marketing%20Lift.png)
 
 ### Forecasting Hourly Energy Usage for the Appalachian region
 <details>
