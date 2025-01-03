@@ -35,10 +35,10 @@ North Carolina State University, Raleigh, NC
   <summary>Quick Summary</summary>
 
   <ul>
-    <li> Developed a predictive model that targets 80% of potential customers by leveraging the top 46.4% of predictions (data from a Portuguese retail bank)
-    <li> Predicted if bank customer will subscribe to a term deposit with 80% accuracy using CatBoost model
-    <li> Identified key attributes of customers likely to subscribe and provided targeted marketing recommendations 
-  <ul>
+    <li> Developed a predictive model that targets 80% of potential customers by leveraging the top 46.4% of predictions (data from a Portuguese retail bank)</li>
+    <li> Predicted if bank customer will subscribe to a term deposit with 80% accuracy using CatBoost model</li>
+    <li> Identified key attributes of customers likely to subscribe and provided targeted marketing recommendations</li>
+  </ul>
 
 </details>
 
