@@ -40,7 +40,7 @@ North Carolina State University, Raleigh, NC
     <li> Identified key attributes of customers likely to subscribe and provided targeted marketing recommendations 
   <ul>
 
-  </details>
+</details>
 
   [View insights](https://github.com/satya-munu/Predicting-Customer-Outcomes-from-Bank-Direct-Marketing-Campaign)
   
