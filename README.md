@@ -3,7 +3,7 @@
 
 ## Contact me 
 **Email:** smunugo2@ncsu.edu  
-[**Linkedin**](https://www.linkedin.com/in/satya-munugoti/)
+**Linkedin** https://www.linkedin.com/in/satya-munugoti/
 
 ## Education  
 North Carolina State University, Raleigh, NC  
@@ -42,9 +42,9 @@ North Carolina State University, Raleigh, NC
 
 </details>
 
-  [View insights](https://github.com/satya-munu/Predicting-Customer-Outcomes-from-Bank-Direct-Marketing-Campaign)
+[View insights](https://github.com/satya-munu/Predicting-Customer-Outcomes-from-Bank-Direct-Marketing-Campaign)
   
-  ![Marketing Lift.png](https://raw.githubusercontent.com/satya-munu/satya-munu.github.io/refs/heads/main/Marketing%20Lift.png)
+![Marketing Lift.png](https://raw.githubusercontent.com/satya-munu/satya-munu.github.io/refs/heads/main/Marketing%20Lift.png)
 
 
 ### Forecasting Hourly Energy Usage for the Appalachian region
