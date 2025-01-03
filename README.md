@@ -29,7 +29,7 @@ North Carolina State University, Raleigh, NC
 
 ![Yelp Tips Sentiment Tableau Map Preview.png](https://raw.githubusercontent.com/satya-munu/satyamunugoti.github.io/refs/heads/main/Yelp%20Tips%20Sentiment%20Tableau%20Map%20Preview.png)
 
-## Predicting Customer Outcomes from Bank Direct Marketing Campaign
+### Predicting Customer Outcomes from Bank Direct Marketing Campaign
 <details>
   <summary>Quick Summary</summary>
 
