@@ -41,7 +41,7 @@ training$datetime_beginning_ept <-
 as.POSIXct(training$datetime_beginning_ept,
 format = "%m/%d/%y %H:%M",
 tz = "America/New_York")
-
+# using 3 seasons, or weeks of training data
 training <- training %>% filter(datetime_beginning_ept > "2024-09-01 00:00:00")
 ```
 
@@ -89,7 +89,7 @@ has_gaps(energy_impute)
 energy_impute$hurricane <- ifelse( energy_impute$datetime_beginning_ept >= as.POSIXct("2024-09-26 00:00:00", tz = "America/New_York") & energy_impute$datetime_beginning_ept < as.POSIXct("2024-09-28 00:00:00", tz = "America/New_York"),1, 0)
 ```
 
-ARIMA w/ External Regressors (Hurricane point intervention and Avg energy usage by hour)
+ARIMA w/ External Regressors (Hurricane point intervention and avg energy usage by hour)
 ```{r}
 library(fable.prophet)
 library(modelr)
@@ -105,10 +105,6 @@ model_all <- energy_impute %>%
   model(
     arimax = ARIMA(mw ~ pdq(2, 0, 1) + PDQ(2, 0, 1) + fourier(K = 2, period = 24) + hurricane + 1 + avg_energy_usage)) 
 ```
-
-
-Validation 5
-SARIMAX - MAPE 4.62%
 
 ```{r}
 validation5_ts$hurricane <- rep(0, 168)
@@ -142,7 +138,7 @@ selected_avg_energy_usage <- energy_impute$avg_energy_usage[energy_impute$dateti
 
 
 ```{r}
-# forecasting 1 week of energy usagge 
+# forecasting 1 week of energy usage 
 new_data <- tsibble(
   time = seq(start_time, by = "1 hour", length.out = 192),
   hurricane = rep(0, 192),
